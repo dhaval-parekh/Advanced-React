@@ -4,6 +4,7 @@ import {User} from "./schemas/User";
 import {Product} from "./schemas/Product";
 import {createAuth} from "@keystone-next/auth";
 import {statelessSessions, withItemData} from "@keystone-next/keystone/session";
+import {ProductImage} from "./schemas/ProductImage";
 
 const databaseURL = process.env.DATABASE_URL || 'mongodb://localhost/keystone-database';
 
@@ -37,6 +38,7 @@ export default withAuth(config({
 	lists: createSchema({
 		User,
 		Product,
+		ProductImage,
 	}),
 	ui: {
 		// Show UI for only use that pass this.
